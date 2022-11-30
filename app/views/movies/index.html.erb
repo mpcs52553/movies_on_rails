@@ -12,8 +12,12 @@
   </header>
 
   <div class="row" id="movies"> 
+    
     <% @movies.each do |m| %>
-      <%= render 'movie', movie: m %>
+      <div class="col-sm-3 text-center mb-5 poster">
+        <%= render 'movie', movie: m %>
+      </div>
     <% end %>
+    
   </div>
 </div>

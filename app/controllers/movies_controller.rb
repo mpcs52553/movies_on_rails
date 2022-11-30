@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
     else
       @movies = retrieve_movies(url_for_movies('top_rated'))
     end
+
+    render 'index'
   end
 
 private
