@@ -1,0 +1,15 @@
+<div class="col-sm-3 text-center mb-5 poster" data-movie-id=<%= movie.tmdb_id %> >
+
+  <img src=<%= movie.poster_url %> class="img-fluid" alt="Poster for <%= movie.title %>">
+
+  <div class="mt-2">
+    <%= movie.year %>
+    <span class="badge bg-primary mx-3"> <%= movie.vote_average %> </span>
+    
+    <%= button_to "#", method: 'patch', class: 'like_button' do %>
+      &hearts;
+      <span><%= movie.likes || 0 %></span>
+    <% end %>
+  </div>
+
+</div>

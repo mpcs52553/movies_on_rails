@@ -1,0 +1,19 @@
+<div>
+  <header class="row mb-5 justify-content-between">
+    <%= form_with url: '/movies', method: 'get' do |f| %>
+      <%= f.text_field :search, placeholder: 'Search by title...', class: 'form-control', autofocus: 1 %>
+    <% end %>
+
+    <p class="mt-2">
+      <%= link_to "Top-Rated Movies", '/movies?category=top_rated', class: 'btn btn-primary' %>
+      <%= link_to "Now Playing", '/movies?category=now_playing', class: 'btn btn-primary'  %>
+      <%= link_to "Our Top 10", '/movies?category=top10', class: 'btn btn-primary' %>
+    </p>
+  </header>
+
+  <div class="row" id="movies"> 
+    <% @movies.each do |m| %>
+      <%= render 'movie', movie: m %>
+    <% end %>
+  </div>
+</div>
